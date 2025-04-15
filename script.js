@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textInput.addEventListener('input', (e) => {
         const currentChar = e.data;
         updateBasicStats();
-        
-        // Update word frequency only when space is added or text is pasted
-        if (currentChar === ' ' || e.inputType === 'insertFromPaste') {
-            updateWordFrequency();
-        }
+        updateWordFrequency();  // Update on every input change
         lastChar = currentChar;
     });
 
