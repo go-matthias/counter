@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Analysis Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Analysis Tool</h1>
+        <div class="input-section">
+            <textarea id="text-input" placeholder="Type or paste your text here..."></textarea>
+        </div>
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Characters</h3>
+                    <p id="char-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Words</h3>
+                    <p id="word-count">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Reading Time</h3>
+                    <p id="reading-time">0 min</p>
+                </div>
+            </div>
+            <div class="word-frequency">
+                <h3>Word Frequency</h3>
+                <div id="word-frequency-list"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
