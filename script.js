@@ -28,8 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update character count
         charCount.textContent = text.length;
 
-        // Update word count
-        const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+        // Update word count with improved punctuation handling
+        const words = text.trim()
+            .split(/[\s,.!?;:]+/)  // Split on spaces and common punctuation
+            .filter(word => word.length > 0);
         wordCount.textContent = words.length;
 
         // Update reading time
@@ -39,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateWordFrequency() {
         const text = textInput.value;
-        const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+        const words = text.trim()
+            .split(/[\s,.!?;:]+/)  // Split on spaces and common punctuation
+            .filter(word => word.length > 0);
         
         // Clear previous frequency list
         wordFrequencyList.innerHTML = '';
@@ -54,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Convert to array and sort by frequency
         const sortedWords = Object.entries(frequency)
             .sort((a, b) => b[1] - a[1])
-            .slice(0, MAX_FREQUENCY_WORDS); // Show only top 6 most frequent words
+            .slice(0, MAX_FREQUENCY_WORDS);
 
         // Create word frequency elements
         sortedWords.forEach(([word, count]) => {
